@@ -1,0 +1,60 @@
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-store/
+
+# Build output
+dist/
+build/
+out/
+.next/
+.nuxt/
+.cache/
+.parcel-cache/
+
+# Environment / secrets
+.env
+.env.*.local
+.env.local
+
+# Logs
+*.log
+logs/
+*.log.*
+
+# IDEs / editors
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+*.swp
+*~
+
+# Python (if present)
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+venv/
+env/
+.venv/
+
+# Test / coverage
+coverage/
+coverage-html/
+
+# Docker
+docker-compose.override.yml
+
+# Packages / archives
+*.tgz
+*.zip
