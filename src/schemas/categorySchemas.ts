@@ -12,7 +12,7 @@ const dbEntrySchema = z.strictObject({
 });
 
 export const categoryParamsSchema = z.strictObject({
-    userId: z.string().refine((val) => isValidObjectId(val), "Invalid user ID"),
+    categoryId: z.string().refine((val) => isValidObjectId(val), "Invalid category ID"),
 });
 
 export const categoryInputSchema = z.strictObject({
