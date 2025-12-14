@@ -1,6 +1,6 @@
 import express from "express";
 import "#db";
-import { userRouter } from "#routers";
+import { userRouter, productRouter, categoryRouter, orderRouter } from "#routers";
 import { errorHandler } from "#middleware";
 
 const port = process.env.PORT;
@@ -9,6 +9,9 @@ const app = express();
 app.use(express.json());
 
 app.use("/users", userRouter);
+app.use("/products", productRouter);
+app.use("/categories", categoryRouter);
+app.use("/orders", orderRouter);
 
 app.use("*splat", (req, res) => {
 	throw new Error(`Die Route ${req.originalUrl} gibt es hier nicht!`, { cause: 404 });

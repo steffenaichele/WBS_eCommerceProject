@@ -15,7 +15,7 @@ export const orderParamsSchema = z.strictObject({
 
 export const orderInputSchema = z.strictObject({
     products: z.array(z.strictObject({
-        productId: z.string().refine((val) => isValidObjectId(val), "Invalid product ID"),
+        productId: z.instanceof(Types.ObjectId),
         quantity: z.number().min(1, "Quantity must be at least 1"),
     })),
     total: z.number().nonnegative("Total must be a non-negative number"),

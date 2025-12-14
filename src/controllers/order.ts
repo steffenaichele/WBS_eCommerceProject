@@ -3,7 +3,7 @@ import type { OrderDTO, OrderInputDTO } from "#schemas";
 import type { RequestHandler } from "express";
 
 // GET /orders
-const getAllorders: RequestHandler<{}, OrderDTO[]> = async (req, res) => {
+const getAllOrders: RequestHandler<{}, OrderDTO[]> = async (req, res) => {
     const orders = await Order.find();
     res.json(orders);
 };
@@ -39,7 +39,7 @@ const deleteOrder: RequestHandler<{ id: string }, { message: string }, OrderInpu
 }
 
 export {
-    getAllorders,
+    getAllOrders,
     createOrder,
     getOrderById,
     updateOrder,
