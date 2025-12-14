@@ -1,15 +1,7 @@
-import mongoose, { Schema, Document } from "mongoose";
+import { Schema, model } from "mongoose";
 
-export interface IOrder extends Document {
-	userId: mongoose.Types.ObjectId;
-	products: Array<{
-		productId: mongoose.Types.ObjectId;
-		quantity: number;
-	}>;
-	total: number;
-}
 
-const OrderSchema = new Schema<IOrder>(
+const OrderSchema = new Schema(
 	{
 		userId: { type: Schema.Types.ObjectId, ref: "User", required: true },
 		products: [
@@ -27,4 +19,4 @@ const OrderSchema = new Schema<IOrder>(
 	{ timestamps: true }
 );
 
-export const Order = mongoose.model<IOrder>("Order", OrderSchema);
+export default model("Order", OrderSchema);
