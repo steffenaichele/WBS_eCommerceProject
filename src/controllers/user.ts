@@ -10,7 +10,7 @@ const getAllUsers: RequestHandler<{}, UserDTO[]> = async (req, res) => {
 
 // Post /users
 const createUser: RequestHandler<{}, UserDTO, UserInputDTO> = async (req, res) => {
-	const newUser = await User.create<UserInputDTO>(req.body);
+	const newUser = await User.create(req.body);
 	res.status(201).json(newUser);
 };
 
