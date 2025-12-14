@@ -16,12 +16,7 @@ export const productParamsSchema = z.strictObject({
 });
 
 export const productInputSchema = z.strictObject({
-    name: z
-            .string()
-            .min(
-                minNameLength,
-                `Name must be at least ${minNameLength} characters long`
-            ),
+    name: z.string().min(minNameLength, `Name must be at least ${minNameLength} characters long`),
     description: z.string(),
     price: z.number().nonnegative("Price must be a non-negative number"),
     categoryId: z.string().refine((val) => isValidObjectId(val), "Invalid category ID"),
